@@ -16,25 +16,26 @@ def connect_db(app):
 
 
 class Pet(db.Model):
-     __tablename__ = "pets"
+
+    __tablename__ = "pets"
 
     id = db.Column(db.Integer,
                    primary_key=True,
                    autoincrement=True)
     name = db.Column(db.Text,
-                    nullable=False)
+                     nullable=False)
     species = db.Column(db.Text,
-                    nullable=False)
+                        nullable=False)
     photo_url = db.Column(db.Text,
-                    nullable=False,
-                    default='')
+                          nullable=False,
+                          default='')
     age = db.Column(db.Text,
                     nullable=False)
     notes = db.Column(db.Text,
-                    nullable=True)
+                      nullable=True)
     available = db.Column(db.Boolean,
-                    nullable=False,
-                    default=True)
+                          nullable=False,
+                          default=True)
 
     def __repr__(self):
         rep = f'<Pet: {self.name} {self.species} {self.age} {self.available}, id={self.id} >'

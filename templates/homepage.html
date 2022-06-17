@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
-{% block title %}Display Pet{% endblock %}
+{% block title %}Display Pet{% endblock title %}
+
 {% block content %}
+
 <h1>Pets</h1>
 <ul>
 
   {%for pet in pets%}
-  <li><a href="pet/{{pet.id}}">{{pet.name}} {{pet.photo_url}}</a>
-    {% if {{pet.available}} == true}
+  <li><a href="{{pets.id}}">{{pets.name}} {{pets.photo_url}}</a>
+    {% if pets.available == true %}
     <span><b>Available!</b></span>
     {% else %}
     <span>Not Available, sorry</span>
@@ -15,10 +17,9 @@
   {% endfor %}
 
 </ul>
-
-<form action="..." method="POST">
+<form action="/add" method="POST">
   <button type="submit">Add a Pet</button>
 </form>
 
 
-{% endblock %}
+{% endblock content%}
