@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Display Pet{% endblock %}
+{% block content %}
+<h1>Pets</h1>
+<ul>
+
+  {%for pet in pets%}
+  <li><a href="pet/{{pet.id}}">{{pet.name}} {{pet.photo_url}}</a>
+    {% if {{pet.available}} == true}
+    <span><b>Available!</b></span>
+    {% else %}
+    <span>Not Available, sorry</span>
+    {% endif %}
+  </li>
+  {% endfor %}
+
+</ul>
+
+<form action="..." method="POST">
+  <button type="submit">Add a Pet</button>
+</form>
+
+
+{% endblock %}
