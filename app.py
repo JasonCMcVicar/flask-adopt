@@ -66,6 +66,6 @@ def add_form():
         db.session.commit()
 
         flash(f"Added {name} and they are {age}")
-        return redirect('/add')
+        return redirect('/homepage')
     else:
         return render_template('add-pet-form.html', form=form)
